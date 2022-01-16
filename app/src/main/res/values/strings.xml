@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">calculIMCApplication</string>
+    <string name="Texte_imc">CALCULER LE IMC</string>
+    <string name="placeholder_nom">Nom</string>
+    <string name="placeholder_prenom">Prenom</string>
+    <string name="Poids_texte">Poids en Kg</string>
+    <string name="Taille_texte">Taille en cm</string>
+    <string name="Texte_resultat_imc">LE CALCUL DE VOTRE IMC</string>
+    <string name="monsieur">Monsieur</string>
+</resources>
