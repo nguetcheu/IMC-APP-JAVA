@@ -32,7 +32,7 @@ public class IMCActivity extends AppCompatActivity {
         // Recuperer imc
         String nom = bundle.getString("nom");
         String prenom = bundle.getString("prenom");
-        int imc = bundle.getInt("imc");
+        Double imc = bundle.getDouble("imc");
 
         ///////////////////////////////// etat de sante particulier //////////////////////////////
         if (imc < 16.5) {

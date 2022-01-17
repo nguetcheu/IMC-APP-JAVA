@@ -78,8 +78,9 @@ public class CalculIMCActivity extends AppCompatActivity {
             String prenom = edtPre.getText().toString();
 
             int poids = numberPickerPoids.getValue();
-            int taille = ( numberPickerTaille.getValue()  * numberPickerTaille.getValue() ) / 10000;
-            int imc = (poids / taille) -4;
+            double taille = (( numberPickerTaille.getValue()  * numberPickerTaille.getValue() ) / 100) * 10;
+            double imc = (poids / taille) ;
+            imc *= 1000;
 
 
             Intent intent = new Intent(CalculIMCActivity.this, IMCActivity.class);
@@ -90,7 +91,7 @@ public class CalculIMCActivity extends AppCompatActivity {
             // Ajouter le nom du bundle
             bundle.putString("prenom", prenom);
             bundle.putString("nom",nom);
-            bundle.putInt("imc", imc);
+            bundle.putDouble("imc", imc);
 
             // Ajouter le bundle a l'intention
             intent.putExtras(bundle);
