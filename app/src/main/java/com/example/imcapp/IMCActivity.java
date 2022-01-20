@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.MessageFormat;
@@ -21,18 +22,16 @@ public class IMCActivity extends AppCompatActivity {
 
         String Newligne=System.getProperty("line.separator");
         String etatSante;
-        /*
-        // Recuperer l'intention
-        Intent intent = getIntent();
-         */
 
-        // Recuperer le bundle
+        // Recuperation du bundle le bundle
         Bundle bundle = getIntent().getExtras();
 
-        // Recuperer imc
+        // Recuperation des variables de calcul de l'imc
         String nom = bundle.getString("nom");
         String prenom = bundle.getString("prenom");
         Double imc = bundle.getDouble("imc");
+
+
 
         ///////////////////////////////// etat de sante particulier //////////////////////////////
         if (imc < 16.5) {
@@ -61,6 +60,7 @@ public class IMCActivity extends AppCompatActivity {
 
         // Afficher le nom dans la textView
         txtNom.setText(MessageFormat.format("LE CALCUL DE VOTRE IMC \r \r Monsieur {0} {1} \r Votre imc est egale a : {2}                                   Vous etes en {3} ", nom, prenom, imc, etatSante));
+
     }
 
 }

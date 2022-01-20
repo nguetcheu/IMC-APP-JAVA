@@ -15,12 +15,18 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class CalculIMCActivity extends AppCompatActivity {
+
+    /////////////////////////  Definition des classes propres au composants ////////////////////////
+
+    ////////// Composant Layout ///////////
     private LinearLayout layout;
     private RelativeLayout relativeLayout;
 
+    ////////// Composant EditText ///////////
     private EditText edtNom;
     private EditText edtPre;
 
+    ////////// Composant NumberPicker ///////////
     private NumberPicker numberPickerTaille;
     private NumberPicker numberPickerPoids;
 
@@ -32,7 +38,6 @@ public class CalculIMCActivity extends AppCompatActivity {
 
         layout = findViewById(R.id.linearform);
         relativeLayout = (RelativeLayout) layout.findViewById(R.id.relativeLayout);
-
 
         edtNom =(EditText) layout.findViewById(R.id.edtnom);
         edtPre =(EditText) layout.findViewById(R.id.edtPrenom);
@@ -72,7 +77,6 @@ public class CalculIMCActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-
         if (item.getTitle().equals("Calculer")){
             String nom = edtNom.getText().toString();
             String prenom = edtPre.getText().toString();
@@ -88,7 +92,7 @@ public class CalculIMCActivity extends AppCompatActivity {
             // Crer un bundle
             Bundle bundle = new Bundle();
 
-            // Ajouter le nom du bundle
+            // Ajout des variables de calcul de l'imc au bundle
             bundle.putString("prenom", prenom);
             bundle.putString("nom",nom);
             bundle.putDouble("imc", imc);
